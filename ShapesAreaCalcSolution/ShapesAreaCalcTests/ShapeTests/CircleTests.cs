@@ -1,4 +1,5 @@
-﻿using ShapesAreaCalc.Shapes;
+﻿using ShapesAreaCalc;
+using ShapesAreaCalc.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace ShapesAreaCalcTests.ShapeTests
         [Fact]
         public void IntRaduisInput()
         {
-            var circle = new Circle(5);
+            var circle = new ShapeCreator(5).Shape;
 
             double expectedValue = 78.5;
             double circleArea = circle.GetShapeArea();
@@ -28,7 +29,7 @@ namespace ShapesAreaCalcTests.ShapeTests
         [Fact]
         public void DoubleRaduisInput()
         {
-            var circle = new Circle(5.5);
+            var circle = new ShapeCreator(5.5).Shape;
 
             double expectedValue = 94.98;
             double circleArea = circle.GetShapeArea();
@@ -39,7 +40,7 @@ namespace ShapesAreaCalcTests.ShapeTests
         [Fact]
         public void NegativeRadiusInput()
         {
-            var circle = new Circle(-5.5);
+            var circle = new ShapeCreator(-5.5).Shape;
 
             double expectedValue = 94.98;
             double circleArea = circle.GetShapeArea();
@@ -50,7 +51,7 @@ namespace ShapesAreaCalcTests.ShapeTests
         [Fact]
         public void ZeroRadiusInput()
         {
-            var circle = new Circle(0);
+            var circle = new ShapeCreator(0).Shape;
 
             double expectedValue = 0;
             double circleArea = circle.GetShapeArea();
