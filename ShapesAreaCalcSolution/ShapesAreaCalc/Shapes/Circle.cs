@@ -9,9 +9,11 @@ namespace ShapesAreaCalc.Shapes
 {
     public class Circle : BaseShape, IShapable
     {
-        public Circle(double radius)
+        public Circle(double radius) : base(radius) { }
+
+        public double GetShapeArea()
         {
-            SetShapeParams(radius);
+            return Math.PI * Math.Pow(ShapeParams.First(), 2);
         }
 
         public double GetShapeArea()

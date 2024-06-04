@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShapesAreaCalc.Abstractions
 {
-    internal interface IShapable
+    public interface IShapable
     {
         public double GetShapeArea();
+        public string GetShapeFeatures();
     }
 }

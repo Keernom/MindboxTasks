@@ -10,6 +10,11 @@ namespace ShapesAreaCalc.Abstractions
     {
         protected List<double> ShapeParams { get; private set; } = new List<double>();
 
+        public BaseShape(params double[] shapeParams)
+        {
+            SetShapeParams(shapeParams);
+        }
+
         public void SetShapeParams(params double[] shapeParams)
         {
             ShapeParams.AddRange(shapeParams);
