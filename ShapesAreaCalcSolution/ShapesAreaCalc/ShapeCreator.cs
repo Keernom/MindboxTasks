@@ -10,13 +10,22 @@ namespace ShapesAreaCalc
 {
     public class ShapeCreator
     {
+        /// <summary>
+        /// Shape instance
+        /// </summary>
         public IShapable Shape { get; private set; }
 
+        /// <summary>
+        /// Creates an instance of Circle shape based on radius
+        /// </summary>
         public ShapeCreator(double radius)
         {
             Shape = new Circle(radius);
         }
 
+        /// <summary>
+        /// Creates an instance of Triangle shape based on three sides
+        /// </summary>
         public ShapeCreator(double a, double b, double c) 
         {
             Shape = new Triangle(a, b, c);
