@@ -1,0 +1,4 @@
+SELECT p.name AS 'Продукт', c.name AS 'Категория' 
+FROM PRODUCTS AS p
+LEFT JOIN CATEGORIES AS c ON p.category_id = c.id
+ORDER BY p.name, c.name

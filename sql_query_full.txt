@@ -1,0 +1,41 @@
+-- create PRODUCTS
+CREATE TABLE PRODUCTS (
+  id INT IDENTITY(1, 1),
+  name varchar(15),
+  category_id INT
+);
+
+-- insert PRODUCTS
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Apple', 1);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Pear', 1);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Tomato', 2);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Cucumber', 2);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Water', 3);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Orange', 1);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Carrot', 2);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Tea', 3);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Juice', 3);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Cheese', null);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Strawberry', 4);
+INSERT INTO PRODUCTS(name,category_id) VALUES ('Strawberry', 5);
+
+
+-- create CATEGORIES
+CREATE TABLE CATEGORIES (
+  id INT IDENTITY(1, 1),
+  name varchar(15)
+);
+
+-- insert PRODUCTS
+INSERT INTO CATEGORIES(name) VALUES ('Fruit');
+INSERT INTO CATEGORIES(name) VALUES ('Vegetables');
+INSERT INTO CATEGORIES(name) VALUES ('Drink');
+INSERT INTO CATEGORIES(name) VALUES ('Frozen');
+INSERT INTO CATEGORIES(name) VALUES ('Berry');
+
+
+-- fetch 
+SELECT p.name AS 'Продукт', c.name AS 'Категория' 
+FROM PRODUCTS AS p
+LEFT JOIN CATEGORIES AS c ON p.category_id = c.id
+ORDER BY p.name, c.name
