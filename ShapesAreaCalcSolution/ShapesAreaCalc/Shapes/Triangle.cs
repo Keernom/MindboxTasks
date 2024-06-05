@@ -15,9 +15,9 @@ namespace ShapesAreaCalc.Shapes
 
         public Triangle(double a, double b, double c)
         {
-            if (a < 0 || b < 0 || c < 0) 
+            if (a <= 0 || b <= 0 || c <= 0) 
             {
-                throw new ArgumentException("Triangle's side can't be less than zero");
+                throw new ArgumentException("Triangle's side can't be zero or less");
             }
 
             _aSide = a;
