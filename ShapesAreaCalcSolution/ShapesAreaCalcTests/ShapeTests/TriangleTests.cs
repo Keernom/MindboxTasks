@@ -40,6 +40,15 @@ namespace ShapesAreaCalcTests.ShapeTests
             Assert.Contains(TriangleFeatures.RightTriangle.ToString(), triangle.GetShapeFeatures());
         }
 
+        [Fact]
+        public void TriangleInequality()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                IShapable triangle = new ShapeCreator(19, 31, 11).Shape;
+            });
+        }
+
         [Theory]
         [InlineData(0, 0, 0)]
         [InlineData(1, 0, 0)]

@@ -20,6 +20,11 @@ namespace ShapesAreaCalc.Shapes
                 throw new ArgumentException("Triangle's side can't be zero or less");
             }
 
+            if (a + b < c || a + c < b || b + c < a)
+            {
+                throw new ArgumentException("Triangle inequality exception");
+            }
+
             _aSide = a;
             _bSide = b;
             _cSide = c;
