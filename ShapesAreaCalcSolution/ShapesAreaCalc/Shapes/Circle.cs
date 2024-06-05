@@ -26,9 +26,9 @@ namespace ShapesAreaCalc.Shapes
             return Math.PI * Math.Pow(_radius, 2);
         }
 
-        public double GetShapeArea()
+        public string GetShapeFeatures()
         {
-            return Math.PI * Math.Pow(ShapeParams.First(), 2);
+            return "";
         }
     }
 }
