@@ -41,6 +41,19 @@ namespace ShapesAreaCalcTests.ShapeTests
         }
 
         [Theory]
+        [InlineData(0, 0, 0)]
+        [InlineData(1, 0, 0)]
+        [InlineData(0, 1, 0)]
+        [InlineData(0, 0, 1)]
+        public void ZeroSidesInput(double a, double b, double c)
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                IShapable triangle = new ShapeCreator(a, b, c).Shape;
+            });
+        }
+
+        [Theory]
         [InlineData(-3, 4, 5)]
         [InlineData(3, -4, 5)]
         [InlineData(3, 4, -5)]
